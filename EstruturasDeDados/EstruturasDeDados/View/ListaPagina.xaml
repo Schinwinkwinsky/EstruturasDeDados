@@ -1,0 +1,85 @@
+﻿<Page
+    x:Class="EstruturasDeDados.View.ListaPagina"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EstruturasDeDados.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="VisualStatePhone">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="320"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="VisualStateTablet">
+                    <VisualState.Setters>
+                        <Setter Target="splitView.(SplitView.DisplayMode)" Value="Inline"/>
+                        <Setter Target="splitView.(SplitView.IsPaneOpen)" Value="True"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="VisualStateDesktop">
+                    <VisualState.Setters>
+                        <Setter Target="splitView.(SplitView.DisplayMode)" Value="Inline"/>
+                        <Setter Target="splitView.(SplitView.IsPaneOpen)" Value="True"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1024"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <RelativePanel>
+            <Button Name="Sanduiche_Btn" Content="&#xE700;" FontFamily="Segoe MDL2 Assets" Height="50" Width="48" Click="Sanduiche_Btn_Click"/>
+            <TextBlock Name="Titulo_TextBlock"  Text="Listas" Margin="10" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.RightOf="Sanduiche_Btn"/>
+            <Button Name="Home_Btn" Content="&#xE80F;" FontFamily="Segoe MDL2 Assets" Height="50" Width="46" Click="Home_Btn_Click" RelativePanel.AlignRightWithPanel="True"/>
+        </RelativePanel>
+
+        <SplitView Name="splitView" Grid.Row="2" OpenPaneLength="200">
+            <SplitView.Pane>
+                <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                    <StackPanel Padding="20">
+                        <StackPanel.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="Margin" Value="0,10"/>
+                            </Style>
+                            <Style TargetType="TextBox">
+                                <Setter Property="Margin" Value="0,10"/>
+                            </Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Width" Value="170"/>
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <TextBlock Text="Menu" FontSize="30"/>
+                        <TextBlock Text="Inserir"/>
+                        <TextBox Name="PosicaoInserir_TextBox" PlaceholderText="Posição" InputScope="Number" KeyDown="PosicaoInserir_TextBox_KeyDown"/>
+                        <TextBox Name="ValorInserir_TextBox" PlaceholderText="Valor" InputScope="Number" KeyDown="ValorInserir_TextBox_KeyDown"/>
+                        <Button Name="Inserir_Btn" Content="Inserir" Click="Inserir_Btn_ClickAsync"/>
+                        <TextBlock Text="Remover" Margin="0,20,0,10"/>
+                        <TextBox Name="PosicaoRemover_TextBox" PlaceholderText="Posição" InputScope="Number" GotFocus="PosicaoRemover_TextBox_GotFocus" KeyDown="PosicaoRemover_TextBox_KeyDown"/>
+                        <TextBox Name="ValorRemover_TextBox" PlaceholderText="Valor" InputScope="Number" GotFocus="ValorRemover_TextBox_GotFocus" KeyDown="ValorRemover_TextBox_KeyDown"/>
+                        <Button Name="Remover_Btn" Content="Remover" Click="Remover_Btn_ClickAsync"/>
+                    </StackPanel>
+                </ScrollViewer>
+            </SplitView.Pane>
+            <SplitView.Content>
+                <ScrollViewer HorizontalScrollBarVisibility="Auto">
+                    <Canvas Name="canvas" Width="10000"/>
+                </ScrollViewer>
+            </SplitView.Content>
+        </SplitView>
+    </Grid>
+</Page>

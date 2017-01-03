@@ -1,0 +1,63 @@
+﻿<Page
+    x:Class="EstruturasDeDados.View.PaginaInicial"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EstruturasDeDados.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="VisualStateGroup">
+                <VisualState x:Name="VisualStatePhone">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="320"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="VisualStateTablet">
+                    <VisualState.Setters>
+                        <Setter Target="stackPanel.(StackPanel.Orientation)" Value="Horizontal"/>
+                        <Setter Target="Listas_Btn.(FrameworkElement.Width)" Value="100"/>
+                        <Setter Target="Listas_Btn.(FrameworkElement.Height)" Value="100"/>
+                        <Setter Target="Filas_Btn.(FrameworkElement.Width)" Value="100"/>
+                        <Setter Target="Filas_Btn.(FrameworkElement.Height)" Value="100"/>
+                        <Setter Target="Pilhas_Btn.(FrameworkElement.Width)" Value="100"/>
+                        <Setter Target="Pilhas_Btn.(FrameworkElement.Height)" Value="100"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState x:Name="VisualStateDesktop">
+                    <VisualState.Setters>
+                        <Setter Target="stackPanel.(StackPanel.Orientation)" Value="Horizontal"/>
+                        <Setter Target="Listas_Btn.(FrameworkElement.Width)" Value="120"/>
+                        <Setter Target="Listas_Btn.(FrameworkElement.Height)" Value="120"/>
+                        <Setter Target="Filas_Btn.(FrameworkElement.Width)" Value="120"/>
+                        <Setter Target="Filas_Btn.(FrameworkElement.Height)" Value="120"/>
+                        <Setter Target="Pilhas_Btn.(FrameworkElement.Width)" Value="120"/>
+                        <Setter Target="Pilhas_Btn.(FrameworkElement.Height)" Value="120"/>
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1024"/>
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <StackPanel x:Name="stackPanel" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Height" Value="80"/>
+                    <Setter Property="Width" Value="80"/>
+                    <Setter Property="Margin" Value="10"/>
+                </Style>
+            </StackPanel.Resources>
+
+            <Button Name="Listas_Btn" Content="Listas" Click="Listas_Btn_Click"/>
+            <Button Name="Filas_Btn" Content="Filas" Click="Filas_Btn_Click"/>
+            <Button Name="Pilhas_Btn" Content="Pilhas" Click="Pilhas_Btn_Click"/>
+        </StackPanel>
+    </Grid>
+</Page>
