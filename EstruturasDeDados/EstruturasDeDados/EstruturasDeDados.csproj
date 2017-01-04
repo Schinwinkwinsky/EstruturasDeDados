@@ -98,7 +98,7 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Model\Listas\Lista.cs" />
+    <Compile Include="Model\Listas\ListaComCalda.cs" />
     <Compile Include="Model\Listas\ListaNaoOrdenadaComCalda.cs" />
     <Compile Include="Model\Listas\ListaOrdenadaCrescenteComCalda.cs" />
     <Compile Include="Model\Listas\ListaOrdenadaDecrescenteComCalda.cs" />

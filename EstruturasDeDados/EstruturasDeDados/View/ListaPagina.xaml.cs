@@ -30,7 +30,7 @@ namespace EstruturasDeDados.View
     {
         public TipoInsercao TipoInsercao { get; set; }
         public TipoOrdenacao TipoOrdenacao { get; set; }
-        public Lista Lista { get; set; }
+        public ListaComCalda Lista { get; set; }
 
         public ListaPagina()
         {
