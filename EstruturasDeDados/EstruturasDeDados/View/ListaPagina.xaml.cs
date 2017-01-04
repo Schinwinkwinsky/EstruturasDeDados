@@ -94,7 +94,7 @@ namespace EstruturasDeDados.View
                 PosicaoInserir_TextBox.Focus(FocusState.Programmatic);
             }
 
-           
+
         }
 
         private void Sanduiche_Btn_Click(Object sender, RoutedEventArgs e)
@@ -105,6 +105,11 @@ namespace EstruturasDeDados.View
         private void Home_Btn_Click(Object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(PaginaInicial));
+        }
+
+        private async void Info_Btn_ClickAsync(Object sender, RoutedEventArgs e)
+        {
+            await new InfoContentDialog().ShowAsync();
         }
 
         private void PosicaoRemover_TextBox_GotFocus(Object sender, RoutedEventArgs e)

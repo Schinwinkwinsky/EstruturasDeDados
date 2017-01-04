@@ -7,7 +7,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    <Grid>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
                 <VisualState x:Name="VisualStatePhone">
@@ -41,10 +41,16 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <RelativePanel>
+        <RelativePanel Background="{ThemeResource AppBarBackgroundThemeBrush}">
+            <RelativePanel.Resources>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="{ThemeResource ButtonBackgroundThemeBrush}"/>
+                </Style>
+            </RelativePanel.Resources>
             <Button Name="Sanduiche_Btn" Content="&#xE700;" FontFamily="Segoe MDL2 Assets" Height="50" Width="48" Click="Sanduiche_Btn_Click"/>
             <TextBlock Name="Titulo_TextBlock"  Text="Listas" Margin="10" RelativePanel.AlignVerticalCenterWithPanel="True" RelativePanel.RightOf="Sanduiche_Btn"/>
-            <Button Name="Home_Btn" Content="&#xE80F;" FontFamily="Segoe MDL2 Assets" Height="50" Width="46" Click="Home_Btn_Click" RelativePanel.AlignRightWithPanel="True"/>
+            <Button Name="Home_Btn" Content="&#xE80F;" FontFamily="Segoe MDL2 Assets" Height="50" Width="46" Click="Home_Btn_Click" RelativePanel.LeftOf="Info_Btn"/>
+            <Button Name="Info_Btn" Content="&#xE946;" FontFamily="Segoe MDL2 Assets" Height="50" Width="46" Click="Info_Btn_ClickAsync" RelativePanel.AlignRightWithPanel="True"/>
         </RelativePanel>
 
         <SplitView Name="splitView" Grid.Row="2" OpenPaneLength="200">
