@@ -7,6 +7,7 @@ using Windows.ApplicationModel;
 using Windows.ApplicationModel.Activation;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -74,6 +75,12 @@ namespace EstruturasDeDados
                 // Verifique se a janela atual está ativa
                 Window.Current.Activate();
             }
+
+            //Esconde a StatusBar quando executado na versão móvel do Windows.
+            if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent("Windows.UI.ViewManagement.StatusBar"))
+            {
+                var statusbar = Windows.UI.ViewManagement.StatusBar.GetForCurrentView().HideAsync();
+            }
         }
 
         /// <summary>
@@ -100,6 +107,7 @@ namespace EstruturasDeDados
             deferral.Complete();
         }
 
+        //Usado para retornar uma página na Pilha de Páginas da aplicação.
         private void App_BackRequested(object sender, Windows.UI.Core.BackRequestedEventArgs e)
         {
             Frame rootFrame = Window.Current.Content as Frame;
