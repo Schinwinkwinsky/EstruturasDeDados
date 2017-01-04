@@ -81,14 +81,20 @@ namespace EstruturasDeDados.View
                 }
 
                 PosicaoInserir_TextBox.IsEnabled = false;
+
+                //Põe o cursor em ValorInserir_TextBox.
+                ValorInserir_TextBox.Focus(FocusState.Programmatic);
             }
             else
             {
                 Lista = new ListaNaoOrdenadaComCalda();
                 Titulo_TextBlock.Text = "Lista Não Ordenada";
+
+                //Põe o cursor em PosicaoInserir_TextBox.
+                PosicaoInserir_TextBox.Focus(FocusState.Programmatic);
             }
 
-            PosicaoInserir_TextBox.Focus(FocusState.Programmatic);
+           
         }
 
         private void Sanduiche_Btn_Click(Object sender, RoutedEventArgs e)
