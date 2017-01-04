@@ -50,7 +50,11 @@ namespace EstruturasDeDados.Model.Listas
             }
             else
             {
-                if (posicao == 1)
+                if (posicao == 0)
+                {
+                    throw new IndexOutOfRangeException("Posição inválida! Lista não contém a posição especificada.");
+                }
+                else if (posicao == 1)
                 {
                     Cabeca = Cabeca.ProximoNo;
                     Cabeca.AnteriorNo = null;

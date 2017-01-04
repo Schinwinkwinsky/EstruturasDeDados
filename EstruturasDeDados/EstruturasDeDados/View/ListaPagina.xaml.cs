@@ -275,22 +275,25 @@ namespace EstruturasDeDados.View
             //Limpa o Canvas.
             canvas.Children.Clear();
 
-            //Distância Esquerda de cada Nó.
-            int distanciaEsquerda = 30;
-
-            //Desenha a Cabeça no Canvas.
-            var aux = Lista.Cabeca;
-            DesenharNo(aux, distanciaEsquerda, 30);
-
-            //Prepara a Distância para o próximo Nó.
-            distanciaEsquerda += 120;
-
-            while (aux.ProximoNo != null)
+            if (!Lista.Vazia())
             {
-                aux = aux.ProximoNo;
+                //Distância Esquerda de cada Nó.
+                int distanciaEsquerda = 30;
+
+                //Desenha a Cabeça no Canvas.
+                var aux = Lista.Cabeca;
                 DesenharNo(aux, distanciaEsquerda, 30);
+
+                //Prepara a Distância para o próximo Nó.
                 distanciaEsquerda += 120;
-            }
+
+                while (aux.ProximoNo != null)
+                {
+                    aux = aux.ProximoNo;
+                    DesenharNo(aux, distanciaEsquerda, 30);
+                    distanciaEsquerda += 120;
+                }
+            }            
         }
 
         //Desenha um Nó no Canvas.
