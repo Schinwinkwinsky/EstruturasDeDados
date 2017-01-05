@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace EstruturasDeDados.Model.Listas
+﻿namespace EstruturasDeDados.Model.Listas
 {
     class ListaOrdenadaDecrescenteComCalda : ListaComCalda
     {
