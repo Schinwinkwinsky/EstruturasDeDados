@@ -98,11 +98,13 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Filas\Fila.cs" />
+    <Compile Include="Model\Filas\NoFila.cs" />
     <Compile Include="Model\Listas\ListaComCalda.cs" />
     <Compile Include="Model\Listas\ListaNaoOrdenadaComCalda.cs" />
     <Compile Include="Model\Listas\ListaOrdenadaCrescenteComCalda.cs" />
     <Compile Include="Model\Listas\ListaOrdenadaDecrescenteComCalda.cs" />
-    <Compile Include="Model\Listas\No.cs" />
+    <Compile Include="Model\No.cs" />
     <Compile Include="Model\Listas\TipoInsercao.cs" />
     <Compile Include="Model\Listas\TipoOrdenacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -165,6 +167,9 @@
     <SDKReference Include="WindowsMobile, Version=10.0.14393.0">
       <Name>Windows Mobile Extensions for the UWP</Name>
     </SDKReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\Pilhas\" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '15.0' ">
     <VisualStudioVersion>15.0</VisualStudioVersion>

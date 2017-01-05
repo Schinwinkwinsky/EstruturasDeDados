@@ -1,4 +1,4 @@
-﻿namespace EstruturasDeDados.Model.Listas
+﻿namespace EstruturasDeDados.Model
 {
     public class No
     {
