@@ -22,13 +22,13 @@
                 </StackPanel>
             </CommandBar.Content>
             <CommandBar.PrimaryCommands>
-                <AppBarButton Name="Home_AppBarBtn" Icon="Home" Label="Home" Click="Home_Btn_Click"/>
-                <AppBarButton Name="Info_AppBarBtn" Label="Info" Icon="Important" Click="Info_Btn_ClickAsync"/>
-                <AppBarButton Name="Help_AppBarBtn" Label="Ajuda" Icon="Help"/>
+                <AppBarButton Name="Home_AppBarBtn" Icon="Home" Label="Home" Click="Home_AppBarBtn_Click"/>
+                <AppBarButton Name="Info_AppBarBtn" Label="Info" Icon="Important" Click="Info_AppBarBtn_ClickAsync"/>
+                <AppBarButton Name="Help_AppBarBtn" Label="Ajuda" Icon="Help" Click="Help_AppBarBtn_ClickAsync"/>
             </CommandBar.PrimaryCommands>
             <CommandBar.SecondaryCommands>
-                <AppBarButton Name="Info_SecondaryAppBarBtn" Label="Info" Icon="Important" Click="Info_Btn_ClickAsync"/>
-                <AppBarButton Name="Help_SecondaryAppBarBtn" Label="Ajuda" Icon="Help"/>
+                <AppBarButton Name="Info_SecondaryAppBarBtn" Label="Info" Icon="Important" Click="Info_AppBarBtn_ClickAsync"/>
+                <AppBarButton Name="Help_SecondaryAppBarBtn" Label="Ajuda" Icon="Help" Click="Help_AppBarBtn_ClickAsync"/>
             </CommandBar.SecondaryCommands>
         </CommandBar>
     </Page.TopAppBar>

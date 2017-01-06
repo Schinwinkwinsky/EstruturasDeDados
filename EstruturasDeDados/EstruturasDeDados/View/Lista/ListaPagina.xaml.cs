@@ -52,7 +52,7 @@ namespace EstruturasDeDados.View.Lista
         //Inicializa a Lista e alguns elementos visuais.
         private async void Inicializar()
         {
-            var dialog = new ListaContentDialog();
+            var dialog = new ListaConfig_ContentDialog();
             await dialog.ShowAsync();
 
             TipoInsercao = dialog.TipoInsercao;
@@ -94,14 +94,19 @@ namespace EstruturasDeDados.View.Lista
             splitView.IsPaneOpen = !splitView.IsPaneOpen;
         }
 
-        private void Home_Btn_Click(Object sender, RoutedEventArgs e)
+        private void Home_AppBarBtn_Click(Object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(PaginaInicial));
         }
 
-        private async void Info_Btn_ClickAsync(Object sender, RoutedEventArgs e)
+        private async void Info_AppBarBtn_ClickAsync(Object sender, RoutedEventArgs e)
         {
-            await new InfoContentDialog().ShowAsync();
+            await new ListaInfo_ContentDialog().ShowAsync();
+        }
+
+        private async void Help_AppBarBtn_ClickAsync(Object sender, RoutedEventArgs e)
+        {
+            await new ListaAjuda_ContentDialog().ShowAsync();
         }
 
         private void PosicaoRemover_TextBox_GotFocus(Object sender, RoutedEventArgs e)

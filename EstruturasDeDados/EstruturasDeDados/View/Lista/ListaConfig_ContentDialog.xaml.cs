@@ -7,12 +7,12 @@ using Windows.UI.Xaml.Controls;
 
 namespace EstruturasDeDados.View.Lista
 {
-    public sealed partial class ListaContentDialog : ContentDialog
+    public sealed partial class ListaConfig_ContentDialog : ContentDialog
     {
         public TipoInsercao TipoInsercao { get; set; }
         public TipoOrdenacao TipoOrdenacao { get; set; }
 
-        public ListaContentDialog()
+        public ListaConfig_ContentDialog()
         {
             this.InitializeComponent();
 

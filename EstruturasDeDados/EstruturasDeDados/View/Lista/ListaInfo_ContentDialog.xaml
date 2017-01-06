@@ -1,0 +1,38 @@
+﻿<ContentDialog
+    x:Class="EstruturasDeDados.View.Lista.ListaInfo_ContentDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:EstruturasDeDados.View.Lista"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    PrimaryButtonText="OK"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick">
+
+    <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollMode="Disabled">
+            <RichTextBlock>
+                <Paragraph Margin="0,0,0,10" FontSize="30">
+                    <Bold>Lista Encadeada</Bold>
+                </Paragraph>
+                <Paragraph TextAlignment="Justify" Margin="0,0,0,5">
+                    Em ciência da computação, uma lista ou sequência é uma estrutura de dados abstrata que implementa uma coleção 
+                    ordenada de valores, onde o mesmo valor pode ocorrer mais de uma vez. Uma instância de uma lista é uma 
+                    representação computacional do conceito matemático de uma sequência finita, que é, uma tupla. Cada instância 
+                    de um valor na lista normalmente é chamado de um item, entrada ou elemento da lista. Se o mesmo valor ocorrer 
+                    várias vezes, cada ocorrência é considerada um item distinto.[
+                </Paragraph>
+                <Paragraph TextAlignment="Justify" Margin="0,0,0,5">
+                    Numa lista cada elemento, ou nó, é composto normalmente por uma variável que guarda a informação (Objeto, inteiro, 
+                    cadeia de caractéres, etc) e dois ponteiros (referências a endereços de memória), que permitem a ligação entre os 
+                    vários nós desta lista. Este tipo de lista é conhecido por "Duplamente ligada" ou "Duplamente encadeada" exatamente 
+                    pelo fato de possuir duas váriaveis de controle (ponteiros) ao contrário da lista simplesmente ligada que possui 
+                    somente um, o qual aponta para o próximo elemento da lista.
+                </Paragraph>
+                <Paragraph TextAlignment="Right" Margin="0,10">
+                    Wikipédia
+                </Paragraph>
+            </RichTextBlock>
+        </ScrollViewer>
+    </Grid>
+</ContentDialog>

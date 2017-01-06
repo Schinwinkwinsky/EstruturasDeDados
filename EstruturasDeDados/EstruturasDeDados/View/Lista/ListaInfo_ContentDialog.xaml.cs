@@ -4,9 +4,9 @@
 
 namespace EstruturasDeDados.View.Lista
 {
-    public sealed partial class InfoContentDialog : ContentDialog
+    public sealed partial class ListaInfo_ContentDialog : ContentDialog
     {
-        public InfoContentDialog()
+        public ListaInfo_ContentDialog()
         {
             this.InitializeComponent();
         }
