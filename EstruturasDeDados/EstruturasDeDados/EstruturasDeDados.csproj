@@ -108,13 +108,13 @@
     <Compile Include="Model\Listas\TipoInsercao.cs" />
     <Compile Include="Model\Listas\TipoOrdenacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\InfoContentDialog.xaml.cs">
+    <Compile Include="View\Lista\InfoContentDialog.xaml.cs">
       <DependentUpon>InfoContentDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ListaContentDialog.xaml.cs">
+    <Compile Include="View\Lista\ListaContentDialog.xaml.cs">
       <DependentUpon>ListaContentDialog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ListaPagina.xaml.cs">
+    <Compile Include="View\Lista\ListaPagina.xaml.cs">
       <DependentUpon>ListaPagina.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\PaginaInicial.xaml.cs">
@@ -146,15 +146,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="View\InfoContentDialog.xaml">
+    <Page Include="View\Lista\InfoContentDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ListaContentDialog.xaml">
+    <Page Include="View\Lista\ListaContentDialog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ListaPagina.xaml">
+    <Page Include="View\Lista\ListaPagina.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
