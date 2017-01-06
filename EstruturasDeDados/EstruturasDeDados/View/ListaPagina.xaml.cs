@@ -97,7 +97,7 @@ namespace EstruturasDeDados.View
 
         }
 
-        private void Sanduiche_Btn_Click(Object sender, RoutedEventArgs e)
+        private void Hamburguer_Btn_Click(Object sender, RoutedEventArgs e)
         {
             splitView.IsPaneOpen = !splitView.IsPaneOpen;
         }

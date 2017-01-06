@@ -7,10 +7,40 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
+    <Page.TopAppBar>
+        <CommandBar IsSticky="True" Background="DodgerBlue" Foreground="Aqua">
+            <CommandBar.Resources>
+                <Style TargetType="AppBarButton">
+                    <Setter Property="Background" Value="DodgerBlue"/>
+                    <Setter Property="Foreground" Value="Aqua"/>
+                </Style>
+            </CommandBar.Resources>
+            <CommandBar.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Button Name="Hamburguer_Btn" Content="&#xE700;" FontFamily="Segoe MDL2 Assets" Height="48" Width="48" Background="DodgerBlue" Foreground="Aqua" Click="Hamburguer_Btn_Click"/>
+                    <TextBlock Name="Titulo_TextBlock" Text="Listas" VerticalAlignment="Center" Margin="10"/>
+                </StackPanel>
+            </CommandBar.Content>
+            <CommandBar.PrimaryCommands>
+                <AppBarButton Name="Home_AppBarBtn" Icon="Home" Label="Home" Click="Home_Btn_Click"/>
+                <AppBarButton Name="Info_AppBarBtn" Label="Info" Icon="Important" Click="Info_Btn_ClickAsync"/>
+                <AppBarButton Name="Help_AppBarBtn" Label="Ajuda" Icon="Help"/>
+            </CommandBar.PrimaryCommands>
+            <CommandBar.SecondaryCommands>
+                <AppBarButton Name="Info_SecondaryAppBarBtn" Label="Info" Icon="Important" Click="Info_Btn_ClickAsync"/>
+                <AppBarButton Name="Help_SecondaryAppBarBtn" Label="Ajuda" Icon="Help"/>
+            </CommandBar.SecondaryCommands>
+        </CommandBar>
+    </Page.TopAppBar>
+
     <Grid Background="White">
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="VisualStateGroup">
                 <VisualState x:Name="VisualStatePhone">
+                    <VisualState.Setters>
+                        <Setter Target="Help_AppBarBtn.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="Info_AppBarBtn.(UIElement.Visibility)" Value="Collapsed"/>
+                    </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="320"/>
                     </VisualState.StateTriggers>
@@ -19,6 +49,8 @@
                     <VisualState.Setters>
                         <Setter Target="splitView.(SplitView.DisplayMode)" Value="Inline"/>
                         <Setter Target="splitView.(SplitView.IsPaneOpen)" Value="True"/>
+                        <Setter Target="Info_SecondaryAppBarBtn.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="Help_SecondaryAppBarBtn.(UIElement.Visibility)" Value="Collapsed"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="720"/>
@@ -28,6 +60,8 @@
                     <VisualState.Setters>
                         <Setter Target="splitView.(SplitView.DisplayMode)" Value="Inline"/>
                         <Setter Target="splitView.(SplitView.IsPaneOpen)" Value="True"/>
+                        <Setter Target="Help_SecondaryAppBarBtn.(UIElement.Visibility)" Value="Collapsed"/>
+                        <Setter Target="Info_SecondaryAppBarBtn.(UIElement.Visibility)" Value="Collapsed"/>
                     </VisualState.Setters>
                     <VisualState.StateTriggers>
                         <AdaptiveTrigger MinWindowWidth="1024"/>
@@ -36,11 +70,13 @@
             </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
+        <!--
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="48"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        
         <RelativePanel Background="DodgerBlue">
             <RelativePanel.Resources>
                 <Style TargetType="Button">
@@ -53,6 +89,7 @@
             <Button Name="Home_Btn" Content="&#xE80F;" FontFamily="Segoe MDL2 Assets" Height="50" Width="46" Click="Home_Btn_Click" RelativePanel.LeftOf="Info_Btn"/>
             <Button Name="Info_Btn" Content="&#xE946;" FontFamily="Segoe MDL2 Assets" Height="50" Width="46" Click="Info_Btn_ClickAsync" RelativePanel.AlignRightWithPanel="True"/>
         </RelativePanel>
+        -->
 
         <SplitView Name="splitView" Grid.Row="2" OpenPaneLength="200">
             <SplitView.Pane>
